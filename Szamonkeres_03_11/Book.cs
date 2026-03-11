@@ -8,12 +8,10 @@ namespace Szamonkeres_03_11
 {
     public class Book
     {
-        public int Id { get; set; }
-
-        public string Title { get; set; }
-
-        public string Author { get; set; }
-
-        public int Year { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public string author { get; set; }
+        public int year { get; set; }
+        public int price { get; set; }
     }
 }

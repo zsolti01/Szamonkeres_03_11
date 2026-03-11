@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szamonkeres_03_11"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Könyvtár" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Képernyőkép 2026-03-02 115005.png"/>
         </Grid.Background>
         <DataGrid x:Name="dbBook" Margin="154,23,154,245" AutoGenerateColumns="True"/>
-
+        
     </Grid>
 </Window>

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
 namespace Szamonkeres_03_11
 {
@@ -28,11 +31,8 @@ namespace Szamonkeres_03_11
 
         private void LoadData()
         {
-            using(BooksContext context = new BooksContext())
-            {
-                var books = context.Books.ToList();
-                dbBook.ItemsSource = books;
-            }
+            BookContext context = new BookContext();
+            dbBook.ItemsSource = context.Books.ToList();
         }
     }
 }
