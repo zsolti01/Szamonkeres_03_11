@@ -15,9 +15,7 @@ namespace Szamonkeres_03_11
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
-                "server=localhost;database=konyvtar;user=root;password=;",
-                ServerVersion.AutoDetect("server=localhost;database=konyvtar;user=root;password=;")
-            );
+                "server=localhost;database=konyvtar;user=root;password=;");
         }
     }
 }

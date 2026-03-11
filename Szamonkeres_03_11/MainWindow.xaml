@@ -10,7 +10,15 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Képernyőkép 2026-03-02 115005.png"/>
         </Grid.Background>
-        <DataGrid x:Name="dbBook" Margin="154,23,154,245" AutoGenerateColumns="True"/>
-        
+        <DataGrid x:Name="dbBook" Margin="116,79,112,164" AutoGenerateColumns="True"/>
+        <Label Content="Könyvtár" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="White" BorderBrush="Black" Background="#FF00E2FF" BorderThickness="3px"/>
+        <Button x:Name="btnUj" Content="Új könyv" HorizontalAlignment="Left" Margin="116,275,0,0" VerticalAlignment="Top" Height="48" Width="97" Background="#FF00E2FF" BorderBrush="Black" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="3px" Click="btnUj_Click"/>
+        <TextBox x:Name="lbCim" HorizontalAlignment="Left" Margin="226,282,0,0" TextWrapping="Wrap" Text="Cím" VerticalAlignment="Top" Width="111" Height="41" FontSize="16"/>
+        <TextBox x:Name="lbSzerzo" HorizontalAlignment="Center" Margin="0,282,0,0" TextWrapping="Wrap" Text="Szerző" VerticalAlignment="Top" Width="112" Height="41" FontSize="16"/>
+        <TextBox x:Name="lbEv" HorizontalAlignment="Left" Margin="461,282,0,0" TextWrapping="Wrap" Text="Kiadás éve" VerticalAlignment="Top" Width="111" Height="41" FontSize="16"/>
+        <TextBox x:Name="lbAr" HorizontalAlignment="Left" Margin="577,282,0,0" TextWrapping="Wrap" Text="Ár" VerticalAlignment="Top" Width="111" Height="41" FontSize="16"/>
+        <Button x:Name="btnHozzaad" Content="Hozzáadás" HorizontalAlignment="Left" Margin="116,325,0,0" VerticalAlignment="Top" Height="48" Width="97" Background="#FF00E2FF" BorderBrush="Black" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="3px"/>
+        <Button x:Name="btnMegse" Content="Mégse" HorizontalAlignment="Left" Margin="116,375,0,0" VerticalAlignment="Top" Height="48" Width="97" Background="#FFFF5F8B" BorderBrush="Black" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="3px" Click="btnMegse_Click"/>
+
     </Grid>
 </Window>

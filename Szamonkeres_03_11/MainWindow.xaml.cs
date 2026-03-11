@@ -27,12 +27,38 @@ namespace Szamonkeres_03_11
         {
             InitializeComponent();
             LoadData();
+            lbCim.Visibility = Visibility.Hidden;
+            lbSzerzo.Visibility = Visibility.Hidden;
+            lbEv.Visibility = Visibility.Hidden;
+            lbAr.Visibility = Visibility.Hidden;
+            btnHozzaad.Visibility = Visibility.Hidden;
+            btnMegse.Visibility = Visibility.Hidden;
         }
 
         private void LoadData()
         {
             BookContext context = new BookContext();
             dbBook.ItemsSource = context.Books.ToList();
+        }
+
+        private void btnUj_Click(object sender, RoutedEventArgs e)
+        {
+            lbCim.Visibility = Visibility.Visible;
+            lbSzerzo.Visibility = Visibility.Visible;
+            lbEv.Visibility = Visibility.Visible;
+            lbAr.Visibility = Visibility.Visible;
+            btnHozzaad.Visibility = Visibility.Visible;
+            btnMegse.Visibility = Visibility.Visible;
+        }
+
+        private void btnMegse_Click(object sender, RoutedEventArgs e)
+        {
+            lbCim.Visibility = Visibility.Hidden;
+            lbSzerzo.Visibility = Visibility.Hidden;
+            lbEv.Visibility = Visibility.Hidden;
+            lbAr.Visibility = Visibility.Hidden;
+            btnHozzaad.Visibility = Visibility.Hidden;
+            btnMegse.Visibility = Visibility.Hidden;
         }
     }
 }
