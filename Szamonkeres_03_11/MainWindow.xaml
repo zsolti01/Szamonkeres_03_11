@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dbBook" Margin="154,113,154,155" AutoGenerateColumns="True"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Képernyőkép 2026-03-02 115005.png"/>
+        </Grid.Background>
+        <DataGrid x:Name="dbBook" Margin="154,23,154,245" AutoGenerateColumns="True"/>
 
     </Grid>
 </Window>

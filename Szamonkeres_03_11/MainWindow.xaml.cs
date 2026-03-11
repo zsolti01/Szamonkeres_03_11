@@ -23,6 +23,16 @@ namespace Szamonkeres_03_11
         public MainWindow()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using(BooksContext context = new BooksContext())
+            {
+                var books = context.Books.ToList();
+                dbBook.ItemsSource = books;
+            }
         }
     }
 }
