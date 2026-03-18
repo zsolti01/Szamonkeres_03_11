@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Képernyőkép 2026-03-02 115005.png"/>
         </Grid.Background>
-        <DataGrid x:Name="dbBook" Margin="116,79,112,164" AutoGenerateColumns="True"/>
+        <DataGrid x:Name="dbBook" Margin="116,79,112,164" AutoGenerateColumns="True" MouseDoubleClick="dbBook_MouseDoubleClick"/>
         <Label Content="Könyvtár" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="White" BorderBrush="Black" Background="#FF00E2FF" BorderThickness="3px"/>
         <Button x:Name="btnUj" Content="Új könyv" HorizontalAlignment="Left" Margin="116,275,0,0" VerticalAlignment="Top" Height="48" Width="97" Background="#FF00E2FF" BorderBrush="Black" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="3px" Click="btnUj_Click"/>
         <TextBox x:Name="lbCim" HorizontalAlignment="Left" Margin="226,282,0,0" TextWrapping="Wrap" Text="Cím" VerticalAlignment="Top" Width="111" Height="41" FontSize="16"/>

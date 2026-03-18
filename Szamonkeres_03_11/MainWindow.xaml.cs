@@ -116,5 +116,69 @@ namespace Szamonkeres_03_11
                 }
             }
         }
+
+        private void dbBook_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Book selectedBook = dbBook.SelectedItem as Book;
+
+            if (selectedBook != null)
+            {
+                lbCim.Text = selectedBook.title;
+                lbSzerzo.Text = selectedBook.author;
+                lbEv.Text = selectedBook.year.ToString();
+                lbAr.Text = selectedBook.price.ToString();
+
+                lbCim.Visibility = Visibility.Visible;
+                lbSzerzo.Visibility = Visibility.Visible;
+                lbEv.Visibility = Visibility.Visible;
+                lbAr.Visibility = Visibility.Visible;
+                btnHozzaad.Visibility = Visibility.Visible;
+                btnMegse.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnSzerkeszt_Click(object sender, RoutedEventArgs e)
+        {
+            Book selectedBook = dbBook.SelectedItem as Book;
+
+            if (selectedBook != null)
+            {
+                try
+                {
+                    BookContext context = new BookContext();
+
+                    var book = context.Books.FirstOrDefault(b => b.id == selectedBook.id);
+
+                    if (book != null)
+                    {
+                        book.title = lbCim.Text;
+                        book.author = lbSzerzo.Text;
+                        book.year = int.Parse(lbEv.Text);
+                        book.price = int.Parse(lbAr.Text);
+
+                        context.SaveChanges();
+                    }
+
+                    LoadData();
+
+                    lbCim.Visibility = Visibility.Hidden;
+                    lbSzerzo.Visibility = Visibility.Hidden;
+                    lbEv.Visibility = Visibility.Hidden;
+                    lbAr.Visibility = Visibility.Hidden;
+                    btnHozzaad.Visibility = Visibility.Hidden;
+                    btnMegse.Visibility = Visibility.Hidden;
+
+                    MessageBox.Show("Könyv módosítva!");
+                }
+                catch
+                {
+                    MessageBox.Show("Hibás adat!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Válassz ki egy könyvet!");
+            }
+        }
     }
 }
