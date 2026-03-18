@@ -60,5 +60,39 @@ namespace Szamonkeres_03_11
             btnHozzaad.Visibility = Visibility.Hidden;
             btnMegse.Visibility = Visibility.Hidden;
         }
+
+        private void btnHozzaad_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                BookContext context = new BookContext();
+
+                Book ujKonyv = new Book
+                {
+                    title = lbCim.Text,
+                    author = lbSzerzo.Text,
+                    year = int.Parse(lbEv.Text),
+                    price = int.Parse(lbAr.Text)
+                };
+
+                context.Books.Add(ujKonyv);
+                context.SaveChanges();
+
+                LoadData();
+
+                lbCim.Visibility = Visibility.Hidden;
+                lbSzerzo.Visibility = Visibility.Hidden;
+                lbEv.Visibility = Visibility.Hidden;
+                lbAr.Visibility = Visibility.Hidden;
+                btnHozzaad.Visibility = Visibility.Hidden;
+                btnMegse.Visibility = Visibility.Hidden;
+
+                MessageBox.Show("Könyv sikeresen hozzáadva!");
+            }
+            catch
+            {
+                MessageBox.Show("Hibás adat!");
+            }
+        }
     }
 }
