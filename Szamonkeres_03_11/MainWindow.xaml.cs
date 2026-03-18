@@ -180,5 +180,10 @@ namespace Szamonkeres_03_11
                 MessageBox.Show("Válassz ki egy könyvet!");
             }
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
