@@ -94,5 +94,27 @@ namespace Szamonkeres_03_11
                 MessageBox.Show("Hibás adat!");
             }
         }
+
+        private void btnTorles_Click(object sender, RoutedEventArgs e)
+        {
+            Book selectedBook = dbBook.SelectedItem as Book;
+
+            if (selectedBook != null)
+            {
+                MessageBoxResult result = MessageBox.Show(
+                    "Biztos törlöd a könyvet?",
+                    "Törlés",
+                    MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    BookContext context = new BookContext();
+                    context.Books.Remove(selectedBook);
+                    context.SaveChanges();
+
+                    LoadData();
+                }
+            }
+        }
     }
 }
