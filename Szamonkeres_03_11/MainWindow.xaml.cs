@@ -132,7 +132,6 @@ namespace Szamonkeres_03_11
                 lbSzerzo.Visibility = Visibility.Visible;
                 lbEv.Visibility = Visibility.Visible;
                 lbAr.Visibility = Visibility.Visible;
-                btnHozzaad.Visibility = Visibility.Visible;
                 btnMegse.Visibility = Visibility.Visible;
             }
         }
@@ -177,7 +176,7 @@ namespace Szamonkeres_03_11
             }
             else
             {
-                MessageBox.Show("Válassz ki egy könyvet!");
+                MessageBox.Show("Válassz ki egy könyvet! (dupla katt)");
             }
         }
 
