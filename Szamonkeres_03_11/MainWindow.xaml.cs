@@ -106,6 +106,8 @@ namespace Szamonkeres_03_11
                     "Törlés",
                     MessageBoxButton.YesNo);
 
+                MessageBox.Show("Könyv sikeersen törölve.");
+
                 if (result == MessageBoxResult.Yes)
                 {
                     BookContext context = new BookContext();
@@ -182,7 +184,15 @@ namespace Szamonkeres_03_11
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            MessageBoxResult resultKilep = MessageBox.Show(
+                "Biztosan ki akarsz lépni?",
+                "Kilépés",
+                MessageBoxButton.YesNo);
+
+            if (resultKilep == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }
